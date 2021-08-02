@@ -49,12 +49,14 @@ function doAction(states, counter){
     else if (action_result == "RIGHT") states[0] = "B";
     else if (action_result == "LEFT") states[0] = "A";		
 
-    if( counter[0] >= 2 & counter[1] >= 2 & counter[2] >= 2 & counter[3] >= 2 & counter[4] >= 2 & counter[5] >= 2 & counter[6] >= 2 & counter[7] >= 2) return;
+    if( counter[0] >= 2 & counter[1] >= 2 & counter[2] >= 2 & counter[3] >= 2 & counter[4] >= 2 & counter[5] >= 2 & counter[6] >= 2 & counter[7] >= 2){
+        document.getElementById("log").innerHTML+="<br><h1>Se recorrieron todos los estados 2 veces</h1>";
+        return;
+    }
     setTimeout(function(){ doAction(states,counter); }, 2000);
 }
 
 var states = ["A","DIRTY","DIRTY"];
 var counter = new Array(8).fill(0);
 doAction(states, counter);
-document.getElementById("log").innerHTML+="<br><br>Se recorrieron todos los estados 2 veces";
 
