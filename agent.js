@@ -50,7 +50,7 @@ function doAction(states, counter){
     else if (action_result == "LEFT") states[0] = "A";		
 
     if( counter[0] >= 2 & counter[1] >= 2 & counter[2] >= 2 & counter[3] >= 2 & counter[4] >= 2 & counter[5] >= 2 & counter[6] >= 2 & counter[7] >= 2){
-        document.getElementById("log").innerHTML+="<br><h1>Se recorrieron todos los estados 2 veces</h1>";
+        document.getElementById("final").innerHTML+="<br><h1>RECORRIDO TERMINADO</h1>";
         return;
     }
     setTimeout(function(){ doAction(states,counter); }, 2000);
